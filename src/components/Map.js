@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import mapboxgl from "mapbox-gl";
 import Popup from "./Popup";
 import FreeFood from "./api/FreeFood.json";
+import Switch from "react-switch";
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
@@ -118,6 +119,11 @@ const Map = () => {
       <button className="cat-button-1" onClick={() => makeinvisible(button1)}>
         Button 1
       </button>
+
+      <label className="cat-button-2">
+        <span>Switch with default style</span>
+        <Switch onChange={() => makeinvisible(button1)} />
+      </label>
     </div>
   );
 };

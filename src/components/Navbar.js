@@ -10,7 +10,7 @@ export default function TopNav() {
         <Nav className="mr-auto">
           <Nav.Link href="/">About</Nav.Link>
           <Nav.Link href="/Map">Map</Nav.Link>
-          <Nav.Link href="/OnlineResources">Online Resources</Nav.Link>
+          <Nav.Link href="/Online">Online Resources</Nav.Link>
           <Nav.Link href="/Submit">Submit a Place </Nav.Link>
         </Nav>
         <Form inline>

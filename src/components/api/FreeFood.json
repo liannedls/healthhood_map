@@ -9,13 +9,14 @@
           "location": "this place",
           "time": "11:00-12:00 Sundays", 
           "facebooklink": "", 
-          "instagramlink": ""
+          "instagramlink": "", 
+          "address":"329 Bell St S, Ottawa, ON K1S 4J9"
         },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.65494537353516,
-          45.43267179295816
+          -75.70342780366822, 
+          45.40280243632339
         ]
       }
     },

@@ -15,6 +15,7 @@ const Popup = ({ feature }) => {
     time,
     facebooklink,
     instalink,
+    website,
   } = feature.properties;
 
   return (
@@ -23,14 +24,11 @@ const Popup = ({ feature }) => {
       <p>{description}</p>
       <p>Where : {location}</p>
       <p>When : {time}</p>
-      <a
-        href="https://www.facebook.com/learnbuildteach/"
-        className="facebook social"
-      >
+      <a href={website} className="facebook social">
         <FontAwesomeIcon icon={faFacebook} size="2x" />
       </a>
-      <a href={facebooklink} className="twitter social">
-        <FontAwesomeIcon icon={faTwitter} size="2x" />
+      <a href={facebooklink} className="facebook social">
+        <FontAwesomeIcon icon={faFacebook} size="2x" />
       </a>
       <a href={instalink} className="instagram social">
         <FontAwesomeIcon icon={faInstagram} size="2x" />
