@@ -22,34 +22,39 @@
     },
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+          "name": "Food Not Bombs",
+          "description": "Free vegan meals. Contact to reserve a meal.", 
+          "location": "this place",
+          "time": "Thursdays", 
+          "facebooklink": "", 
+          "instagramlink": "", 
+          "address":"329 Bell St S, Ottawa, ON K1S 4J9"
+        },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.7291030883789,
-          45.40206593659076
+          -75.70342780366822, 
+          45.40280243632339
         ]
       }
-    },
+    },    
     {
       "type": "Feature",
-      "properties": {},
+      "properties": {
+          "name": "Shepherds of Good Hope",
+          "description": "Soup Kitchen", 
+          "location": "this place",
+          "time": "Daily from 11:30am until 12:30pm", 
+          "facebooklink": "", 
+          "instagramlink": "", 
+          "address":"233 Murray Street"
+        },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -75.75141906738281,
-          45.38084899931206
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.6412124633789,
-          45.39218176360856
+          -75.68870668646454, 
+          45.4317206639354
         ]
       }
     }
