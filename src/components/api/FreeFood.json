@@ -1,0 +1,56 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+          "name": "Carleton Food Collective",
+          "description": "Free, rescued groceries from local groceries stores.", 
+          "location": "this place",
+          "time": "11:00-12:00 Sundays", 
+          "facebooklink": "", 
+          "instagramlink": ""
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.65494537353516,
+          45.43267179295816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.7291030883789,
+          45.40206593659076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.75141906738281,
+          45.38084899931206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.6412124633789,
+          45.39218176360856
+        ]
+      }
+    }
+  ]
+}

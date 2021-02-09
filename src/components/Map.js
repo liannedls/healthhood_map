@@ -2,9 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import mapboxgl from "mapbox-gl";
 import Popup from "./Popup";
-import GeoJsonVal1 from "./api/GeoJson1.json";
-import GeoJsonVal2 from "./api/GeoJson2.json";
-import GeoJsonVal3 from "./api/GeoJson3.json";
+import FreeFood from "./api/FreeFood.json";
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
@@ -13,9 +11,7 @@ const Map = () => {
   const popUpRef = useRef(new mapboxgl.Popup({ offset: 15 }));
   const [buttonref, setButtonref] = useState(true);
   const [map, setMap] = useState(null);
-  const [button1, setButton1] = useState("health-layer");
-  const [button2, setButton2] = useState("food-layer");
-  const [button3, setButton3] = useState("mind-layer");
+  const [button1, setButton1] = useState("food-layer");
   // initialize map when component mounts
 
   useEffect(() => {
@@ -24,33 +20,19 @@ const Map = () => {
       // See style options here: https://docs.mapbox.com/api/maps/#styles
       style: "mapbox://styles/mapbox/streets-v11",
       center: [-75.65494537353516, 45.43267179295816],
-      zoom: 11,
-      maxBounds: [
-        [-76.072173, 45.052915],
-        [-75.289848, 45.673931],
-      ],
+      zoom: 12,
+      maxZoom: 15,
+      minZoom: 12,
     });
     setMap(map);
     // add navigation control (zoom buttons)
     map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
     let categories = [
       {
-        category: "health",
-        "icon-image": "airfield-15",
-        jsondata: GeoJsonVal1,
-        layername: "health-layer",
-      },
-      {
         category: "food",
         "icon-image": "restaurant-noodle-15",
-        jsondata: GeoJsonVal2,
+        jsondata: FreeFood,
         layername: "food-layer",
-      },
-      {
-        category: "mind",
-        "icon-image": "hospital-15",
-        jsondata: GeoJsonVal3,
-        layername: "mind-layer",
       },
     ];
 
@@ -135,12 +117,6 @@ const Map = () => {
     <div className="map-container" ref={mapContainerRef}>
       <button className="cat-button-1" onClick={() => makeinvisible(button1)}>
         Button 1
-      </button>
-      <button className="cat-button-2" onClick={() => makeinvisible(button2)}>
-        Button 2
-      </button>
-      <button className="cat-button-3" onClick={() => makeinvisible(button3)}>
-        Button 3
       </button>
     </div>
   );
