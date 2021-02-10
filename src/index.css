@@ -11,31 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.cat-button-1 {
-  position: absolute;
-  top: 60px;
-  right: 5px;
-  z-index: 1;
-  width: 50px;
-  height: 50ps;
-  color: brown;
-}
-.cat-button-2 {
-  position: absolute;
-  top: 60px;
-  right: 55px;
-  z-index: 1;
-  width: 50px;
-  height: 50ps;
-  color: brown;
-}
-.cat-button-3 {
-  position: absolute;
-  top: 60px;
-  right: 105px;
-  z-index: 1;
-  width: 50px;
-  height: 50ps;
-  color: brown;
-}

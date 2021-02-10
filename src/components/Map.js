@@ -3,23 +3,35 @@ import ReactDOM from "react-dom";
 import mapboxgl from "mapbox-gl";
 import Popup from "./Popup";
 import FreeFood from "./api/FreeFood.json";
+import FreeExercise from "./api/FreeExercise.json";
+import FreeMind from "./api/FreeMind.json";
 import Switch from "react-switch";
+import { FaBeer } from "react-icons/fa";
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 const Map = () => {
   const mapContainerRef = useRef(null);
   const popUpRef = useRef(new mapboxgl.Popup({ offset: 15 }));
-  const [buttonref, setButtonref] = useState(true);
+  const [buttonref, setButtonref] = useState(false);
   const [map, setMap] = useState(null);
+  const [maploaded, setMaploaded] = useState(false);
   const [button1, setButton1] = useState("food-layer");
-  const [colourbutton, setColourbutton] = useState("button-colour");
-  const [fontcolourbutton, setFontcolourbutton] = useState(
-    "font-button-colour"
-  );
-  const [bordercolourbutton, setBordercolourbutton] = useState(
-    "border-button-colour"
-  );
+  const [button2, setButton2] = useState("mind-layer");
+  const [button3, setButton3] = useState("activity-layer");
+
+  const [colorbutton1, setColorbutton1] = useState("#17a2b8");
+  const [fontcolorbutton1, setFontcolorbutton1] = useState("white");
+  const [bordercolorbutton1, setBordercolorbutton1] = useState("#17a2b8");
+
+  const [colorbutton2, setColorbutton2] = useState("#17a2b8");
+  const [fontcolorbutton2, setFontcolorbutton2] = useState("white");
+  const [bordercolorbutton2, setBordercolorbutton2] = useState("#17a2b8");
+
+  const [colorbutton3, setColorbutton3] = useState("#17a2b8");
+  const [fontcolorbutton3, setFontcolorbutton3] = useState("white");
+  const [bordercolorbutton3, setBordercolorbutton3] = useState("#17a2b8");
+
   // initialize map when component mounts
 
   useEffect(() => {
@@ -42,11 +54,23 @@ const Map = () => {
         jsondata: FreeFood,
         layername: "food-layer",
       },
+      {
+        category: "mind",
+        "icon-image": "restaurant-noodle-15",
+        jsondata: FreeMind,
+        layername: "mind-layer",
+      },
+      {
+        category: "activity",
+        "icon-image": "restaurant-noodle-15",
+        jsondata: FreeExercise,
+        layername: "activity-layer",
+      },
     ];
 
     for (const item in categories) {
       let cat = categories[item];
-      console.log(cat.jsondata);
+      console.log(cat);
       map.on("load", () => {
         // add the data source for new a feature collection with no features
         map.addSource(cat.category, {
@@ -109,35 +133,108 @@ const Map = () => {
     return () => map.remove();
   }, []);
 
+  const sidebuttons = [
+    {
+      num: "button1",
+      backcolor: "colourbutton1",
+      bordercolor: "bordercolourbutton1",
+      fontcolor: "fontcolourbutton1",
+    },
+    {
+      num: "button2",
+      backcolor: "colourbutton2",
+      bordercolor: "bordercolourbutton2",
+      fontcolor: "fontcolourbutton2",
+    },
+    {
+      num: "button3",
+      backcolor: "colourbutton3",
+      bordercolor: "bordercolourbutton3",
+      fontcolor: "fontcolourbutton3",
+    },
+  ];
+
   function makeinvisible(val) {
-    //setButtonref(!buttonref);
     console.log(val);
     if (buttonref) {
       map.setLayoutProperty(val, "visibility", "none");
       setButtonref(false);
-      setColourbutton("white");
-      setBordercolourbutton("#17a2b8");
-      setFontcolourbutton("#17a2b8");
+      let backColor = "white";
+      let fontColor = "#17a2b8";
+      console.log("if" + val);
+      if (val === button1) {
+        setColorbutton1(backColor);
+        setFontcolorbutton1(fontColor);
+      }
+      if (val === button2) {
+        setColorbutton2(backColor);
+        setFontcolorbutton2(fontColor);
+      }
+      if (val === button3) {
+        setColorbutton3(backColor);
+        setFontcolorbutton3(fontColor);
+      }
     } else {
       map.setLayoutProperty(val, "visibility", "visible");
       setButtonref(true);
-      setColourbutton("#17a2b8");
-      setFontcolourbutton("white");
+      let backColor = "#17a2b8";
+      let fontColor = "white";
+      console.log("else" + val);
+      if (val === button1) {
+        setColorbutton1(backColor);
+        setFontcolorbutton1(fontColor);
+        console.log("val is" + val);
+      }
+      if (val === button2) {
+        setColorbutton2(backColor);
+        setFontcolorbutton2(fontColor);
+        console.log("val is" + val);
+      }
+      if (val === button3) {
+        setColorbutton3(backColor);
+        setFontcolorbutton3(fontColor);
+      }
     }
+  }
+
+  function donothing() {
+    console.log("its doing nothing");
   }
 
   return (
     <div className="map-container" ref={mapContainerRef}>
       <button
-        className="btn btn-info cat-button-2"
+        className="btn btn-info cat-button-1"
         onClick={() => makeinvisible(button1)}
         style={{
-          backgroundColor: colourbutton,
-          borderColor: bordercolourbutton,
-          color: fontcolourbutton,
+          backgroundColor: colorbutton1,
+          borderColor: bordercolorbutton1,
+          color: fontcolorbutton1,
         }}
       >
-        Button 1
+        <FaBeer />
+      </button>
+      <button
+        className="btn btn-info cat-button-2"
+        onClick={() => makeinvisible(button2)}
+        style={{
+          backgroundColor: colorbutton2,
+          borderColor: bordercolorbutton2,
+          color: fontcolorbutton2,
+        }}
+      >
+        <FaBeer />
+      </button>
+      <button
+        className="btn btn-info cat-button-3"
+        onClick={() => makeinvisible(button3)}
+        style={{
+          backgroundColor: colorbutton3,
+          borderColor: bordercolorbutton3,
+          color: fontcolorbutton3,
+        }}
+      >
+        <FaBeer />
       </button>
     </div>
   );
