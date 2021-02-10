@@ -12,8 +12,9 @@ export default function Home() {
       <h2>So do we!</h2>
 
       <h3>
-        Look through the <a href="/Map">map</a> and explore all the community
-        ressources available.{" "}
+        Look through the <a href="/Map">map</a> and explore all the FREE
+        community ressources available. If It's not free, it's not here. If it's
+        here, it's for everyone.
       </h3>
     </div>
   );

@@ -13,6 +13,13 @@ const Map = () => {
   const [buttonref, setButtonref] = useState(true);
   const [map, setMap] = useState(null);
   const [button1, setButton1] = useState("food-layer");
+  const [colourbutton, setColourbutton] = useState("button-colour");
+  const [fontcolourbutton, setFontcolourbutton] = useState(
+    "font-button-colour"
+  );
+  const [bordercolourbutton, setBordercolourbutton] = useState(
+    "border-button-colour"
+  );
   // initialize map when component mounts
 
   useEffect(() => {
@@ -108,22 +115,30 @@ const Map = () => {
     if (buttonref) {
       map.setLayoutProperty(val, "visibility", "none");
       setButtonref(false);
+      setColourbutton("white");
+      setBordercolourbutton("#17a2b8");
+      setFontcolourbutton("#17a2b8");
     } else {
       map.setLayoutProperty(val, "visibility", "visible");
       setButtonref(true);
+      setColourbutton("#17a2b8");
+      setFontcolourbutton("white");
     }
   }
 
   return (
     <div className="map-container" ref={mapContainerRef}>
-      <button className="cat-button-1" onClick={() => makeinvisible(button1)}>
+      <button
+        className="btn btn-info cat-button-2"
+        onClick={() => makeinvisible(button1)}
+        style={{
+          backgroundColor: colourbutton,
+          borderColor: bordercolourbutton,
+          color: fontcolourbutton,
+        }}
+      >
         Button 1
       </button>
-
-      <label className="cat-button-2">
-        <span>Switch with default style</span>
-        <Switch onChange={() => makeinvisible(button1)} />
-      </label>
     </div>
   );
 };
