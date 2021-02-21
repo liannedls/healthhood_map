@@ -9,7 +9,7 @@ export default function TopNav() {
         <Navbar.Brand>HealthHood</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/">About</Nav.Link>
-          <Nav.Link href="/Map">Free Map</Nav.Link>
+          <Nav.Link href="/Map">Map</Nav.Link>
           <Nav.Link href="/Online">Online Resources</Nav.Link>
           <Nav.Link href="/Submit">Submit a Place </Nav.Link>
         </Nav>
