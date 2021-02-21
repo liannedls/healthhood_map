@@ -22,6 +22,11 @@
   margin-top: 3%;
 }
 
+.home i {
+  color: #f87361;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
 .submitform {
   display: flex;
   justify-content: center;
@@ -39,13 +44,62 @@
   height: 1000px;
 }
 .mapboxgl-popup-content {
+  padding: 15px;
   max-width: 400px;
   font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
-  background-color: rgb(214, 247, 240);
+  background-color: white;
+}
+
+.mapboxgl-popup-content p {
+  margin-bottom: auto;
+}
+
+.popup-always-text {
+  font-weight: bold;
+}
+.mapboxgl-popup button {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  border-radius: 100%;
+  background-color: #0a0a0a;
+  z-index: 4;
+  color: #fff;
+  line-height: 3rem;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+.mapboxgl-popup-close-button:hover {
+  background-color: #e85d47;
+}
+
+.popup-links {
+  display: flex;
+  justify-content: center;
+}
+
+.popup-links a {
+  padding: 2px;
+  margin-top: 10px;
+}
+
+.popup h3 {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.popup h4 {
+  text-align: center;
+  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
 .mapboxgl-popup-content h3 {
-  color: blue;
+  color: black;
 }
 
 .navbar-light {
@@ -80,9 +134,45 @@
   font-size: small;
 }
 
+.react-datetime-start {
+  position: absolute;
+  top: 62px;
+  right: 150px;
+  z-index: 1;
+  width: 100px;
+  height: 30px;
+  font-size: small;
+}
+.react-datetime-end {
+  position: absolute;
+  top: 90px;
+  right: 150px;
+  z-index: 1;
+  width: 100px;
+  height: 30px;
+  font-size: small;
+}
+
+.searchButton {
+  position: absolute;
+  top: 120px;
+  right: 150px;
+  z-index: 1;
+  width: 100px;
+  height: 30px;
+  font-size: small;
+}
+
+.map-container .react-datetime-picker {
+  position: inherit;
+}
+
 .online {
   text-align: center;
-  padding-top: 20px;
+  padding: 20px;
+}
+.online h1 {
+  margin-bottom: 20px;
 }
 
 .online a {

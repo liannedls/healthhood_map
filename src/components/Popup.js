@@ -1,5 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaGlobe, FaAddressBook } from "react-icons/fa";
 import {
   faFacebook,
   faTwitter,
@@ -19,20 +20,28 @@ const Popup = ({ feature }) => {
   } = feature.properties;
 
   return (
-    <div id={`popup-${id}`}>
+    <div id={`popup-${id}`} className="popup">
       <h3>{name}</h3>
-      <p>{description}</p>
-      <p>Where : {location}</p>
-      <p>When : {time}</p>
-      <a href={website} className="facebook social">
-        <FontAwesomeIcon icon={faFacebook} size="2x" />
-      </a>
-      <a href={facebooklink} className="facebook social">
-        <FontAwesomeIcon icon={faFacebook} size="2x" />
-      </a>
-      <a href={instalink} className="instagram social">
-        <FontAwesomeIcon icon={faInstagram} size="2x" />
-      </a>
+      <h4>{description}</h4>
+      <p>
+        <b>Where : </b>
+        {location}
+      </p>
+      <p>
+        <b>When : </b>
+        {time}
+      </p>
+      <div className="popup-links">
+        <a href={website} className="internet social">
+          <FaGlobe size={36} />
+        </a>
+        <a href={facebooklink} className="facebook social">
+          <FontAwesomeIcon icon={faFacebook} size="3x" />
+        </a>
+        <a href={instalink} className="instagram social">
+          <FontAwesomeIcon icon={faInstagram} size="3x" />
+        </a>
+      </div>
     </div>
   );
 };

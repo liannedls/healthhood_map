@@ -6,7 +6,8 @@ import FreeFood from "./api/FreeFood.json";
 import FreeExercise from "./api/FreeExercise.json";
 import FreeMind from "./api/FreeMind.json";
 import Switch from "react-switch";
-import { FaBeer } from "react-icons/fa";
+import { FaBeer, FaAppleAlt, FaBrain } from "react-icons/fa";
+import DateTimePicker from "react-datetime-picker";
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
@@ -32,6 +33,8 @@ const Map = () => {
   const [fontcolorbutton3, setFontcolorbutton3] = useState("white");
   const [bordercolorbutton3, setBordercolorbutton3] = useState("#17a2b8");
 
+  const [startTime, onChangeStart] = useState(new Date());
+  const [endTime, onChangeEnd] = useState(new Date());
   // initialize map when component mounts
 
   useEffect(() => {
@@ -54,18 +57,18 @@ const Map = () => {
         jsondata: FreeFood,
         layername: "food-layer",
       },
-      {
-        category: "mind",
-        "icon-image": "restaurant-noodle-15",
-        jsondata: FreeMind,
-        layername: "mind-layer",
-      },
-      {
-        category: "activity",
-        "icon-image": "restaurant-noodle-15",
-        jsondata: FreeExercise,
-        layername: "activity-layer",
-      },
+      // {
+      //   category: "mind",
+      //   "icon-image": "restaurant-noodle-15",
+      //   jsondata: FreeMind,
+      //   layername: "mind-layer",
+      // },
+      // {
+      //   category: "activity",
+      //   "icon-image": "restaurant-noodle-15",
+      //   jsondata: FreeExercise,
+      //   layername: "activity-layer",
+      // },
     ];
 
     for (const item in categories) {
@@ -161,7 +164,6 @@ const Map = () => {
       setButtonref(false);
       let backColor = "white";
       let fontColor = "#17a2b8";
-      console.log("if" + val);
       if (val === button1) {
         setColorbutton1(backColor);
         setFontcolorbutton1(fontColor);
@@ -197,12 +199,56 @@ const Map = () => {
     }
   }
 
-  function donothing() {
-    console.log("its doing nothing");
+  function isLinkExpiryDateWithinRange(value) {
+    // format: mm.dd.yyyy;
+    value = value.split(".");
+    var todayDate = new Date(),
+      endDate = new Date(
+        todayDate.getFullYear(),
+        todayDate.getMonth() + 6,
+        todayDate.getDate() + 1
+      );
+    let date = new Date(value[2], value[0] - 1, value[1]);
+
+    return todayDate < date && date < endDate;
+  }
+
+  function searchByDate() {
+    var myObjectList = {
+      type: "FeatureCollection",
+      features: [{}],
+    };
+    let newval = FreeFood.features[1];
+    let newval2 = FreeFood.features[2];
+    myObjectList.features.push(newval);
+    myObjectList.features.push(newval2);
+    console.log(FreeFood.features[0].properties);
+    console.log(isLinkExpiryDateWithinRange("12.24.2012"));
+    console.log(startTime);
+    let newdata = myObjectList;
+    for (const item in FreeFood.features) {
+      if (isLinkExpiryDateWithinRange(FreeFood.features[item])) {
+        myObjectList.features.push(FreeFood.features[item]);
+      }
+    }
+    map.getSource("food").setData(newdata);
   }
 
   return (
     <div className="map-container" ref={mapContainerRef}>
+      <DateTimePicker
+        onChange={onChangeStart}
+        value={startTime}
+        className="react-datetime-start"
+      />
+      <DateTimePicker
+        onChange={onChangeEnd}
+        value={endTime}
+        className="react-datetime-end"
+      />
+      <button className="searchButton" onClick={() => searchByDate()}>
+        Select Date
+      </button>
       <button
         className="btn btn-info cat-button-1"
         onClick={() => makeinvisible(button1)}
@@ -212,9 +258,9 @@ const Map = () => {
           color: fontcolorbutton1,
         }}
       >
-        <FaBeer />
+        <FaAppleAlt size="2x" />
       </button>
-      <button
+      {/* <button
         className="btn btn-info cat-button-2"
         onClick={() => makeinvisible(button2)}
         style={{
@@ -223,19 +269,8 @@ const Map = () => {
           color: fontcolorbutton2,
         }}
       >
-        <FaBeer />
-      </button>
-      <button
-        className="btn btn-info cat-button-3"
-        onClick={() => makeinvisible(button3)}
-        style={{
-          backgroundColor: colorbutton3,
-          borderColor: bordercolorbutton3,
-          color: fontcolorbutton3,
-        }}
-      >
-        <FaBeer />
-      </button>
+        <FaBrain size="2x" />
+      </button> */}
     </div>
   );
 };

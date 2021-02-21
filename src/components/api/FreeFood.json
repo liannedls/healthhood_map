@@ -4,10 +4,14 @@
     {
       "type": "Feature",
       "properties": {
+          "id":1,
           "name": "Carleton Food Collective",
           "description": "Free, rescued groceries from local groceries stores.", 
           "location": "this place",
           "time": "11:00-12:00 Sundays", 
+          "start_time":"12.24.2012",
+          "end_time":"",
+          "website": "",
           "facebooklink": "", 
           "instagramlink": "", 
           "address":"329 Bell St S, Ottawa, ON K1S 4J9"
@@ -23,10 +27,12 @@
     {
       "type": "Feature",
       "properties": {
+        "id":2,
           "name": "Food Not Bombs",
           "description": "Free vegan meals. Contact to reserve a meal.", 
           "location": "this place",
           "time": "Thursdays", 
+          "website": "",
           "facebooklink": "", 
           "instagramlink": "", 
           "address":"329 Bell St S, Ottawa, ON K1S 4J9"
@@ -42,13 +48,203 @@
     {
       "type": "Feature",
       "properties": {
+        "id":3,
           "name": "Shepherds of Good Hope",
           "description": "Soup Kitchen", 
           "location": "this place",
           "time": "Daily from 11:30am until 12:30pm", 
+          "website": "",
           "facebooklink": "", 
           "instagramlink": "", 
           "address":"233 Murray Street"
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.68870668646454, 
+          45.4317206639354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id":4,
+          "name": "Salvation Army Booth Centre",
+          "description": "Soup Kitchen", 
+          "location": "this place",
+          "time": "Mon. – Fri. Breakfast: 7:50 a.m. soup – line: 3:00p.m. – 3:20p.m. Saturday:    Breakfast: 9:30a.m. – 10:30a.m. Sunday: Brunch 10:30-11:30a.m", 
+          "website": "",
+          "facebooklink": "", 
+          "instagramlink": "", 
+          "address":"171 George Street"
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.68870668646454, 
+          45.4317206639354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id":5,
+          "name": "The Mission",
+          "description": "Soup Kitchen", 
+          "location": "this place",
+          "time": " 7 Days/Week:  8:00a.m and 3:00p.m", 
+          "website": "",
+          "facebooklink": "", 
+          "instagramlink": "", 
+          "address":"35 Waller St"
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.68870668646454, 
+          45.4317206639354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id":6,
+          "name": "St. Luke’s Lunch Club and Drop-In",
+          "description": "Soup Kitchen", 
+          "location": "this place",
+          "time": "Mon – Fri: Breakfast: 8:00-9:00a.m Lunch 12:00 – 1:00p.m", 
+          "website": "",
+          "facebooklink": "", 
+          "instagramlink": "", 
+          "address":"760 Somerset St. West at Bell"
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.68870668646454, 
+          45.4317206639354
+        ]
+      }
+    },{
+      "type": "Feature",
+      "properties": {
+        "id":7,
+          "name": "Shepherds of Good Hope",
+          "description": "Soup Kitchen", 
+          "location": "this place",
+          "time": "Daily from 11:30am until 12:30pm", 
+          "website": "",
+          "facebooklink": "", 
+          "instagramlink": "", 
+          "address":"233 Murray Street"
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.68870668646454, 
+          45.4317206639354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id":8,
+          "name": "Centre 507 ",
+          "description": "Drop-in, snacks, health resources and counseling available.", 
+          "location": "this place",
+          "time": "Mon., Wed. Thurs.& Friday: 9:00 -10:30a.m 12:00 to 3:30p.m Tuesday 5:30 to 8:45p.m.Sunday 12:30-2:45 p.m. Soup 12:00-2:00p.m.     Coffee until 3:00p.m.", 
+          "website": "",
+          "facebooklink": "", 
+          "instagramlink": "", 
+          "address":"507 Bank Street, Centretown United Church"
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.68870668646454, 
+          45.4317206639354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id":9,
+          "name": "A Place to Go",
+          "description": ". drop-in and snacks, OIM services available", 
+          "location": "this place",
+          "time": "Friday 7:30 – 10:30 p.m", 
+          "website": "",
+          "facebooklink": "", 
+          "instagramlink": "", 
+          "address":"152 Metcalfe Street, St. Peter and St. Paul’s Anglican Church"
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.68870668646454, 
+          45.4317206639354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id":10,
+          "name": "Centre 120",
+          "description": "drop-in and dinner families welcome", 
+          "location": "this place",
+          "time": "November to March Saturday: 4:30 – 8:00p.m", 
+          "website": "",
+          "facebooklink": "", 
+          "instagramlink": "", 
+          "address":"120 Lisgar Street at Elgin, Knox Presbyterian Church"
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.68870668646454, 
+          45.4317206639354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id":11,
+          "name": "Centre 7",
+          "description": "Soup Kitchen", 
+          "location": "this place",
+          "time": "Saturday: 4:00-8:00p.m. – drop-in and dinner November to March", 
+          "website": "",
+          "facebooklink": "", 
+          "instagramlink": "", 
+          "address":"7 Galt Street at Aylmer and Bank, Southminster United Church"
+        },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.68870668646454, 
+          45.4317206639354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id":12,
+          "name": "Ottawa Innercity Ministries ",
+          "description": "Soup Kitchen", 
+          "location": "this place",
+          "time": "Tuesday Lunch 11 am – 3 pm", 
+          "website": "",
+          "facebooklink": "", 
+          "instagramlink": "", 
+          "address":"Dominion-Chalmers Church    355 Cooper "
         },
       "geometry": {
         "type": "Point",
