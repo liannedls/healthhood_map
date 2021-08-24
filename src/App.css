@@ -37,12 +37,14 @@
 .submitform h1 {
   text-align: center;
   margin-bottom: 2%;
+  margin-top: 4%;
 }
 
 .submitform iframe {
   width: 1000px;
   height: 1000px;
 }
+
 .mapboxgl-popup-content {
   padding: 15px;
   max-width: 400px;
@@ -108,8 +110,8 @@
 
 .cat-button-1 {
   position: absolute;
-  top: 60px;
-  right: 5px;
+  top: 72px;
+  right: 35px;
   z-index: 1;
   width: 50px;
   height: 50px;
@@ -134,6 +136,30 @@
   font-size: small;
 }
 
+.date-picker {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  z-index: 1;
+  width: 100px;
+  height: 30px;
+  font-size: small;
+}
+.react-datetime-picker__wrapper {
+  background-color: #17a2b8;
+  border-radius: 5%;
+  color: white;
+  border-color: none;
+  width: max-content;
+}
+.react-datetime-picker__inputGroup__input {
+  color: white;
+}
+
+.react-calendar {
+  border-color: none;
+}
+
 .react-datetime-start {
   position: absolute;
   top: 62px;
@@ -156,11 +182,15 @@
 .searchButton {
   position: absolute;
   top: 120px;
-  right: 150px;
+  right: 56px;
   z-index: 1;
   width: 100px;
   height: 30px;
   font-size: small;
+  background-color: #33909e;
+  color: white;
+  border-color: none;
+  border-radius: 5mm;
 }
 
 .map-container .react-datetime-picker {
@@ -169,12 +199,37 @@
 
 .online {
   text-align: center;
-  padding: 20px;
+  padding-top: 40px;
 }
+
 .online h1 {
-  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .online a {
   color: white;
+}
+
+.online .btn {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 10px;
+}
+
+.online .row {
+  padding: 10px;
+}
+
+.first-col,
+.second-col {
+  border-right: 1px solid black;
+}
+
+.online h2 {
+  text-align: center;
+  font-size: large;
+}
+
+.about h2 {
+  font-size: medium;
 }

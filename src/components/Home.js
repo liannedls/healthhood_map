@@ -20,15 +20,10 @@ export default function Home() {
       <h3>
         <i>
           With the Covid-19 pandemic, many free community resources are
-          unavailable; free in person counselling, free exercise classes, free
-          activites, are cancelled.
-        </i>
-      </h3>
-      <h3>
-        <i>
-          While the Covid-19 pandemic has cancelled many in person services,
-          online counselling, activites, exercise classes, are available and
-          listed in <a href="/Online">Online Resources</a>.
+          unavailable; free in person counselling, free exercise classes, and
+          other free activites are cancelled. While the Covid-19 pandemic has
+          cancelled many in person services, available online resources are
+          found in <a href="/Online">Online Resources</a>.
         </i>
       </h3>
       <Row>

@@ -12,7 +12,6 @@ export default function App() {
   return (
     <Router>
       <div>
-        <h2>Welcome to React Router Tutorial</h2>
         <TopNav />
         <hr />
         <Switch>

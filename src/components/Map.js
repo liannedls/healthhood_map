@@ -8,6 +8,7 @@ import FreeMind from "./api/FreeMind.json";
 import Switch from "react-switch";
 import { FaBeer, FaAppleAlt, FaBrain } from "react-icons/fa";
 import DateTimePicker from "react-datetime-picker";
+import restaurantup from "./restaurant.png";
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
@@ -53,45 +54,55 @@ const Map = () => {
     let categories = [
       {
         category: "food",
-        "icon-image": "restaurant-noodle-15",
+        "icon-image": restaurantup,
+        "icon-color": "red",
         jsondata: FreeFood,
         layername: "food-layer",
       },
-      // {
-      //   category: "mind",
-      //   "icon-image": "restaurant-noodle-15",
-      //   jsondata: FreeMind,
-      //   layername: "mind-layer",
-      // },
-      // {
-      //   category: "activity",
-      //   "icon-image": "restaurant-noodle-15",
-      //   jsondata: FreeExercise,
-      //   layername: "activity-layer",
-      // },
+      {
+        category: "mind",
+        "icon-image": "restaurant-noodle-15",
+        "icon-color": "blue",
+        jsondata: FreeMind,
+        layername: "mind-layer",
+      },
+      {
+        category: "activity",
+        "icon-image": "restaurant-noodle-15",
+        jsondata: FreeExercise,
+        layername: "activity-layer",
+      },
     ];
 
     for (const item in categories) {
       let cat = categories[item];
       console.log(cat);
       map.on("load", () => {
-        // add the data source for new a feature collection with no features
-        map.addSource(cat.category, {
-          type: "geojson",
-          data: cat.jsondata,
-        });
-        // now add the layer, and reference the data source above by name
-        map.addLayer({
-          id: cat.layername,
-          source: cat.category,
-          type: "symbol",
-          layout: {
-            // full list of icons here: https://labs.mapbox.com/maki-icons
-            "icon-image": cat["icon-image"], // this will put little croissants on our map
-            "icon-padding": 0,
-            "icon-allow-overlap": true,
-            visibility: "visible",
-          },
+        map.loadImage(restaurantup, function (error, image) {
+          if (error) throw error;
+          // add image to the active style and make it SDF-enabled
+          map.addImage("your-image-id", image, { sdf: true });
+
+          // add the data source for new a feature collection with no features
+          map.addSource(cat.category, {
+            type: "geojson",
+            data: cat.jsondata,
+          });
+          // now add the layer, and reference the data source above by name
+          map.addLayer({
+            id: cat.layername,
+            source: cat.category,
+            type: "symbol",
+            layout: {
+              // full list of icons here: https://labs.mapbox.com/maki-icons
+              "icon-image": "your-image-id", // this will put little croissants on our map
+              "icon-padding": 0,
+              "icon-allow-overlap": true,
+              visibility: "visible",
+              "icon-size": 0.1,
+            },
+            paint: { "icon-color": "white" },
+          });
         });
       });
 
@@ -236,19 +247,21 @@ const Map = () => {
 
   return (
     <div className="map-container" ref={mapContainerRef}>
-      <DateTimePicker
-        onChange={onChangeStart}
-        value={startTime}
-        className="react-datetime-start"
-      />
-      <DateTimePicker
-        onChange={onChangeEnd}
-        value={endTime}
-        className="react-datetime-end"
-      />
-      <button className="searchButton" onClick={() => searchByDate()}>
-        Select Date
-      </button>
+      <div className="date-picker">
+        <DateTimePicker
+          onChange={onChangeStart}
+          value={startTime}
+          className="react-datetime-start"
+        />
+        <DateTimePicker
+          onChange={onChangeEnd}
+          value={endTime}
+          className="react-datetime-end"
+        />
+        <button className="searchButton" onClick={() => searchByDate()}>
+          Select Date
+        </button>
+      </div>
       <button
         className="btn btn-info cat-button-1"
         onClick={() => makeinvisible(button1)}
@@ -258,7 +271,7 @@ const Map = () => {
           color: fontcolorbutton1,
         }}
       >
-        <FaAppleAlt size="2x" />
+        <FaAppleAlt size="2x" color="white" />
       </button>
       {/* <button
         className="btn btn-info cat-button-2"
